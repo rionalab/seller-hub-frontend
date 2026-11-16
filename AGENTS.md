@@ -2,21 +2,25 @@
 
 ## Mulai bekerja dan sumber utama
 
-Baca ../seller-hub-specs/AGENTS.md, ../seller-hub-specs/docs/PRODUCT.md, FEATURE-STATUS.md serta spesifikasi fitur terkait di docs/features/ milik specs. Path saudara dihitung dari root repository. Baca docs/ARCHITECTURE.md dan docs/CODING-STANDARDS.md lokal sebelum desain/implementasi. Jika specs tidak tersedia, laporkan prasyarat checkout dan lanjutkan pekerjaan independen; jangan membuat aturan bisnis atau salinan PRODUCT lokal.
+- **Orientasi proyek** — Baca `../seller-hub-specs/AGENTS.md`, `docs/PRODUCT.md`, dan `docs/FEATURE-STATUS.md` di specs.
+- **Fitur atau perubahan perilaku bisnis** — Gunakan bacaan orientasi, lalu baca spesifikasi fitur terkait dan `docs/FEATURE-WORKFLOW.md` di specs. Baca `docs/ARCHITECTURE.md` dan `docs/CODING-STANDARDS.md` lokal sebelum desain atau implementasi.
+- **Tugas teknis lokal** — Mulai dari file terkait dan bagian **Routing**. Buka spesifikasi jika perubahan menyentuh perilaku bisnis, dan cek kontrak API jika perubahan menyentuh integrasi.
+
+Path saudara dihitung dari root repository. Jika tugas memerlukan specs dan checkout-nya tidak tersedia, laporkan prasyarat checkout dan lanjutkan pekerjaan independen; jangan membuat aturan bisnis atau salinan PRODUCT lokal.
 
 Kebutuhan, prioritas, business rules dan acceptance criteria dimiliki specs. Struktur kode, keamanan browser dan test FE dimiliki docs/ lokal. Kontrak API aktif berasal dari ../seller-hub-backend/docs/API-CONTRACT.md dan openapi.json, bukan mock atau asumsi UI. Baca docs/API-INTEGRATION.md sebelum integrasi. Jika kontrak bertentangan dengan spesifikasi, angkat keputusan sebelum mengimplementasikan bagian yang bergantung padanya.
 
-Ikuti ../seller-hub-specs/docs/FEATURE-WORKFLOW.md sebagai partner kritis dengan perspektif Senior Business Analyst, Product Owner dan Principal Software Architect. Pisahkan fakta, asumsi, rekomendasi dan keputusan. Tanyakan hanya keputusan yang diperlukan melalui pilihan interaktif bila tersedia; jangan mengulang keputusan yang sudah disetujui atau memperluas scope otomatis.
+Untuk pekerjaan fitur, ikuti ../seller-hub-specs/docs/FEATURE-WORKFLOW.md sebagai partner kritis dengan perspektif Senior Business Analyst, Product Owner dan Principal Software Architect. Pisahkan fakta, asumsi, rekomendasi dan keputusan. Tanyakan hanya keputusan yang diperlukan melalui pilihan interaktif bila tersedia; jangan mengulang keputusan yang sudah disetujui atau memperluas scope otomatis.
 
 ## Routing
 
-- Analisis/desain/implementasi fitur UI: .agents/frontend.md dan .agents/skills/frontend-feature/SKILL.md.
+- Fitur UI: gunakan .agents/skills/frontend-feature/SKILL.md. Cocokkan alur pengguna, batas komponen dan kondisi UI dengan specs serta standar lokal.
 - Integrasi API dan state server: docs/API-INTEGRATION.md dan .agents/skills/api-integration/SKILL.md.
-- Pengujian: .agents/testing.md dan docs/TESTING.md; gunakan .agents/skills/frontend-test/SKILL.md untuk verifikasi perilaku yang diperlukan.
-- Keamanan browser/sesi/data: .agents/security.md dan docs/SECURITY.md; cocokkan bagian perubahan yang relevan pada tiap implementasi.
+- Pengujian: gunakan docs/TESTING.md untuk memilih bukti pengujian sesuai risiko. Gunakan .agents/skills/frontend-test/SKILL.md untuk verifikasi perilaku yang diperlukan dan laporkan batasnya.
+- Keamanan frontend: periksa trust boundary browser, sesi dan data privat sesuai perubahan. Gunakan docs/SECURITY.md sebagai sumber aturan.
 - Setup/CI: docs/SETUP.md. Status teknis aktual: docs/TODO.md.
 
-frontend-feature menjadi alur utama; spesialis hanya untuk bagian terdampak. Jangan memulai ulang workflow dari spesialis. File peran bukan subagent otomatis. Dokumen standar menjadi sumber aturan; skill berisi langkah kerja dan peran berisi fokus pemeriksaan.
+frontend-feature menjadi alur utama; spesialis hanya untuk bagian terdampak. Jangan memulai ulang workflow dari spesialis. Dokumen standar menjadi sumber aturan dan skill berisi langkah kerja.
 
 ## Cara bekerja
 
